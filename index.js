@@ -15,7 +15,7 @@ const createTimerAnimator = () => {
     endTimerDate = startTimerDate + seconds * 1000
 
     timerIntervalLink = setInterval(() => {
-      let timeDiffSecc = (endTimerDate - Date.now()) / 1000
+      const timeDiffSecc = (endTimerDate - Date.now()) / 1000
       if (timeDiffSecc <= 1) {
         timerEl.innerHTML = "00:00:00"
         clearInterval(timerIntervalLink)

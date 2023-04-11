@@ -4,7 +4,6 @@ const timerEl = document.querySelector('span');
 
 const formateTimeCount = (time) => time >= 10 ? `${time}` : `0${time}`
 const createTimerAnimator = () => {
-  let endTimerDate;
   let timerIntervalLink;
 
   return (seconds) => {
@@ -12,7 +11,7 @@ const createTimerAnimator = () => {
     if (timerIntervalLink) clearInterval(timerIntervalLink)
 
     const startTimerDate = Date.now();
-    endTimerDate = startTimerDate + seconds * 1000
+    const endTimerDate = startTimerDate + seconds * 1000
 
     timerIntervalLink = setInterval(() => {
       const timeDiffSecc = (endTimerDate - Date.now()) / 1000
